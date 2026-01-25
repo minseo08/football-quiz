@@ -5,7 +5,8 @@ services:
     image: minseo08/soccer-quiz-backend:latest
     ports:
       - "4000:4000"
-    env_file: ./soccer-quiz-server/.env
+    volumes:
+      - ./soccer-quiz-server/.env:/app/.env
     restart: always
   
   app:
