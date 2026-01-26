@@ -2891,6 +2891,7 @@ body {
   padding: 18px 40px;
   font-size: 18px;
   min-width: 200px;
+  align-items: center;
 }
 
 .solo-result-card {

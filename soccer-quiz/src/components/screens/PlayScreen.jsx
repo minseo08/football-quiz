@@ -23,7 +23,7 @@ export function PlayScreen({
         <img src={currentQuiz.imageUrls[0]} alt="Quiz" className="quiz-image" />
         <h3 className="question-text">{currentQuiz.question}</h3>
         
-        {currentQuiz.type?.toLowerCase().trim() === 'logo' ? (
+        {currentQuiz.type?.toLowerCase().trim() === 'logo' || 'stadium' ? (
           <div className="options-grid">
             {currentQuiz.options?.map(opt => (
               <button key={opt} className="opt-btn" onClick={() => onAnswer(opt)}>
