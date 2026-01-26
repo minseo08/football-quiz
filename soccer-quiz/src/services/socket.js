@@ -26,6 +26,12 @@ export const disconnectSocket = () => {
 export const setupSocketListeners = (handlers) => {
   if (!socket) return;
 
+  socket.off("connect");
+  socket.off("lobby_update");
+  socket.off("room_joined");
+  socket.off("room_update");
+  socket.off("room_deleted");
+
   socket.on("connect", () => {
     console.log("서버 연결됨:", socket.id);
   });
