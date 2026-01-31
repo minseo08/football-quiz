@@ -4,7 +4,9 @@
 사용자는 혼자서 실력을 쌓는 **솔로 모드**부터 다른 사용자들과 실시간으로 경쟁하는 **멀티플레이 모드**까지 즐길 수 있습니다.
 
 <p align="center">
-  <img src="./images/webscreen1.png" width="50%" /> 
+  <img src="./images/webscreen1.png" width="50%" />
+</p>
+<p align="center">
   <img src="./images/webscreen2.png" width="25%" />
   <img src="./images/webscreen3.png" width="25%" />
   <img src="./images/webscreen4.png" width="25%" />
