@@ -40,7 +40,7 @@
    <img src="./web_images/3.png" width="45%" /> 
    <img src="./web_images/4.png" width="45%" /> 
    <img src="./web_images/5.png" width="30%" />
-   <img src="./web_images/2.png" width="30%" />
+   <img src="./web_images/2.png" width="25%" />
    <img src="./web_images/6.png" width="30%" /> 
 </p>
 
