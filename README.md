@@ -1,65 +1,54 @@
-# Football Master
+# FOOT:AGE (Football Quiz Challenge)
 
-축구 팬들을 위한 실시간 퀴즈 플랫폼, **Football Master**입니다.  
-사용자는 혼자서 실력을 쌓는 **솔로 모드**부터 다른 사용자들과 실시간으로 경쟁하는 **멀티플레이 모드**까지 즐길 수 있습니다.
+> 축구 로고, 경기장, 선수 등 다양한 퀴즈를 실시간으로 즐길 수 있는 솔로 및 멀티플레이 퀴즈 플랫폼
+* http://13.209.87.175:3000/
+---
 
+## Key Features
+
+* **실시간 퀴즈**: Socket.io를 활용하여 친구들과 대기실에서 만나 실시간으로 퀴즈 대결
+* **다양한 퀴즈 모드**: 
+    * **SOLO PLAY**: 혼자서 실력을 쌓고 기록을 측정하는 연습 모드
+    * **MULTI PLAY**: 방을 생성하거나 참여하여 다른 유저와 점수 경쟁을 하는 실시간 모드
+* **다양한 퀴즈 유형**: 로고 맞히기, 경기장 사진 보고 이름 입력하기 등 시각적 요소를 활용한 퀴즈
+* **UI/UX**: Tailwind CSS와 애니메이션 효과를 활용한 디자인
+
+---
+
+## Tech Stack
+
+### Frontend
+* **Framework**: Next.js 15 (App Router)
+* **Styling**: Tailwind CSS
+* **State Management**: Zustand
+* **Communication**: Socket.io-client, Axios
+
+### Backend
+* **Framework**: NestJS
+* **Database**: MongoDB (Mongoose)
+* **Real-time**: Socket.io
+* **Auth**: JWT (JSON Web Token), Bcrypt
+
+### DevOps & Deployment
+* **CI/CD**: GitHub Actions
+* **Container**: Docker & Docker Compose
+* **Cloud**: AWS EC2
+
+---
 <p align="center">
-  <img src="./images/webscreen1.png" width="50%" />
+   <img src="./web_images/1.png" width="45%" />
+   <img src="./web_images/3.png" width="45%" /> 
+   <img src="./web_images/4.png" width="45%" /> 
+   <img src="./web_images/5.png" width="30%" />
+   <img src="./web_images/2.png" width="25%" />
+   <img src="./web_images/6.png" width="30%" /> 
 </p>
-<p align="center">
-  <img src="./images/webscreen2.png" width="25%" />
-  <img src="./images/webscreen4.png" width="45%" />
-  <img src="./images/webscreen3.png" width="45%" />
-  <img src="./images/webscreen5.png" width="25%" />
-</p>
----
 
-## 프로젝트 개요
+## 📂 Project Structure
 
-이 프로젝트는 **React**와 **Node.js**를 기반으로 구축되었으며, **REST API**와 **Socket.io**를 결합하여 퀴즈 사이트에서 데이터의 안정성과 실시간성을 모두 확보했습니다.
-
-### Tech Stack
-
-**Frontend**
-- **Library:** React
-- **State Management:** Custom Hooks (`useAuth`, `useQuiz`, `useSocket`)
-- **Communication:** Axios (API), Socket.io-client
-- **Styling:** CSS3
-
-**Backend**
-- **Runtime:** Node.js (Express)
-- **Real-time:** Socket.io
-- **Database:** MongoDB / MySQL (via `db.js`)
-
----
-
-## 주요 기능
-
-- **다양한 게임 모드:** - **Solo Mode:** 혼자서 축구 지식을 테스트
-  - **Multiplayer Mode:** 방을 생성하고 대기실에서 인원을 모집해 함께 대결
-  - **Timer Mode:** 제한 시간 내에 정답을 맞춰야 하는 긴장감을 제공합니다.
-- **실시간 멀티플레이:** Socket.io를 활용하여 여러 명의 사용자가 동시에 같은 퀴즈를 풀고 정답 개수를 즉시 공유
-- **관리자 퀴즈 제어:** 관리자는 `AdminQuizScreen`을 통해 퀴즈 추가
-- **마이페이지:** 사용자의 퀴즈 기록과 통계를 확인할 수 있는 기능 제공
-
----
-
-## 프로젝트 구조
-
-### [App] - Client-side
-```text
-src/
-├── components/     # UI 구성 요소 (Auth, Common, Modals, Screens)
-├── hooks/          # 비즈니스 로직 분리 (인증, 퀴즈, 소켓)
-├── services/       # 서버 통신 정의 (API 요청, 소켓 설정)
-└── constants/      # 공통 설정 및 환경 변수 관리
-```
-
-### [Server] - Server-side
-```text
-server/
-├── models/         # DB 스키마 (User, Quiz)
-├── routes/         # API 엔드포인트 (Auth, Quiz)
-├── sockets/        # 실시간 게임 로직 처리 (gameHandler)
-└── config/         # DB 연결 설정
-```
+```bash
+football-quiz-project/
+├── football-quiz-frontend/  # Next.js Application
+├── football-quiz-backend/   # NestJS API Server
+├── docker-compose.yml       # Docker orchestration
+└── .github/workflows/       # CI/CD (GitHub Actions)
