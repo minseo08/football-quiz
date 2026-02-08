@@ -2,14 +2,6 @@
 
 > 축구 로고, 경기장, 선수 등 다양한 퀴즈를 실시간으로 즐길 수 있는 솔로 및 멀티플레이 퀴즈 플랫폼
 > 
-<p align="center">
-   <img src="./web_images/1.png" width="45%" />
-   <img src="./web_images/3.png" width="45%" /> 
-   <img src="./web_images/4.png" width="45%" /> 
-   <img src="./web_images/5.png" width="45%" />
-   <img src="./web_images/2.png" width="30%" />
-   <img src="./web_images/6.png" width="30%" /> 
-</p>
 ---
 
 ## Key Features
@@ -43,6 +35,14 @@
 * **Cloud**: AWS EC2
 
 ---
+<p align="center">
+   <img src="./web_images/1.png" width="45%" />
+   <img src="./web_images/3.png" width="45%" /> 
+   <img src="./web_images/4.png" width="45%" /> 
+   <img src="./web_images/5.png" width="45%" />
+   <img src="./web_images/2.png" width="30%" />
+   <img src="./web_images/6.png" width="30%" /> 
+</p>
 
 ## 📂 Project Structure
 
