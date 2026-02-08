@@ -8,7 +8,7 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   app.enableCors({
-    origin: 'http://localhost:3000',
+    origin: 'http://13.209.87.175:3000',
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   });
@@ -28,6 +28,6 @@ async function bootstrap() {
   app.use(sessionMiddleware);
 
   await app.listen(4000);
-  console.log(`Server is running on: http://localhost:4000`);
+  console.log(`Server is running on: http://13.209.87.175:4000`);
 }
 bootstrap();
