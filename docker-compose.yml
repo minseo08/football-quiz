@@ -2,16 +2,16 @@ version: '3.8'
 services:
   server:
     #build: ./soccer-quiz-server
-    image: minseo08/soccer-quiz-backend:latest
+    image: minseo08/football-quiz-backend:latest
     ports:
       - "4000:4000"
     volumes:
-      - /home/ubuntu/football-quiz-web/soccer-quiz-server/.env:/usr/src/app/.env
+      - /home/ubuntu/football-quiz-web/football-quiz-backend/.env:/usr/src/app/.env
     restart: always
   
   app:
     #build: ./soccer-quiz
-    image: minseo08/soccer-quiz-frontend:latest
+    image: minseo08/football-quiz-frontend:latest
     ports:
       - "3000:3000"
     depends_on:
