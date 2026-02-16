@@ -154,6 +154,9 @@ export default function RoomPage() {
                   <option value="logo">팀 로고 맞히기</option>
                   <option value="player">선수 맞히기</option>
                   <option value="stadium">경기장 맞히기</option>
+                  <option value="nationality">선수 국적 맞히기</option>
+                  <option value="career">커리어로 선수 맞히기</option>
+                  <option value="squad_nation">국적 스쿼드로 팀 맞히기</option>
                 </select>
               </div>
               <div>

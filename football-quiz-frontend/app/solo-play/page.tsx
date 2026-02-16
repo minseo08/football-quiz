@@ -42,11 +42,11 @@ export default function SoloPlayPage() {
     const currentQuiz = filteredQuizzes[currentStep];
     if (!currentQuiz) return;
 
-    const cleanSubmitted = String(answer).toLowerCase().trim();
+    const cleanSubmitted = String(answer).toLowerCase().trim().replace(/\s+/g, '');
 
     const isCorrect = Array.isArray(currentQuiz.answer)
-      ? currentQuiz.answer.some((a: string) => String(a).toLowerCase().trim() === cleanSubmitted)
-      : String(currentQuiz.answer).toLowerCase().trim() === cleanSubmitted;
+      ? currentQuiz.answer.some((a: string) => String(a).toLowerCase().trim().replace(/\s+/g, '') === cleanSubmitted)
+      : String(currentQuiz.answer).toLowerCase().trim().replace(/\s+/g, '') === cleanSubmitted;
 
     setLastAnswerCorrect(isCorrect);
     setIsChecking(true);
@@ -133,7 +133,7 @@ export default function SoloPlayPage() {
             </button>
           </div>
         ) : (
-          quiz.type !== 'player' ? (
+          quiz.type === 'logo' || quiz.type === 'stadium' || quiz.type === 'nationality' ? (
             <div className="grid grid-cols-2 gap-4">
               {quiz.options?.map((opt: string) => (
                 <button key={opt} onClick={() => handleAnswer(opt)} className="bg-gray-800 p-6 rounded-2xl font-bold text-lg hover:bg-green-600 transition shadow-lg active:scale-95">

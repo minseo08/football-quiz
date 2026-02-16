@@ -46,9 +46,13 @@ export default function GamePage() {
       return;
     }
 
+    const cleanSubmitted = submittedAnswer.toLowerCase().trim().replace(/\s+/g, '');
+
     const isCorrect = Array.isArray(currentQuiz.answer)
-      ? currentQuiz.answer.some((ans: string) => ans.toLowerCase().trim() === submittedAnswer.toLowerCase().trim())
-      : currentQuiz.answer.toLowerCase().trim() === submittedAnswer.toLowerCase().trim();
+      ? currentQuiz.answer.some((ans: string) => 
+          ans.toLowerCase().trim().replace(/\s+/g, '') === cleanSubmitted
+        )
+      : currentQuiz.answer.toLowerCase().trim().replace(/\s+/g, '') === cleanSubmitted;
 
     const nextScore = isCorrect ? score + 1 : score;
     if (isCorrect) setQuizState({ score: nextScore });
@@ -89,7 +93,7 @@ export default function GamePage() {
 
   const quiz = filteredQuizzes[currentStep];
   const quizType = quiz.type?.toLowerCase().trim();
-  const isMultipleChoice = quizType === 'logo' || quizType === 'stadium';
+  const isMultipleChoice = quizType === 'logo' || quizType === 'stadium' || quizType === 'nationality';
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-gray-950 text-white p-6">
