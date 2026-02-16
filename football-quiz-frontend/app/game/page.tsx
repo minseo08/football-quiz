@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '../../store/useGameStore';
 import { socket } from '../../lib/socket';
@@ -12,6 +12,7 @@ export default function GamePage() {
     filteredQuizzes, currentStep, score, timeLeft, timeLimit, setQuizState, currentRoom, setCurrentUser
   } = useGameStore();
   const [userInput, setUserInput] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -24,6 +25,19 @@ export default function GamePage() {
     }
     return () => clearInterval(timer);
   }, [timeLeft, setQuizState]);
+
+  useEffect(() => {
+    const quiz = filteredQuizzes[currentStep];
+    if (quiz && inputRef.current) {
+      const quizType = quiz.type?.toLowerCase().trim();
+      const isMultipleChoice = quizType === 'logo' || quizType === 'stadium' || quizType === 'nationality';
+      if (!isMultipleChoice) {
+        setTimeout(() => {
+          inputRef.current?.focus();
+        }, 100);
+      }
+    }
+  }, [currentStep, filteredQuizzes]);
 
   const syncStats = async (isCorrect: boolean) => {
     try {
@@ -133,6 +147,7 @@ export default function GamePage() {
           <div className="space-y-4">
             <form onSubmit={(e) => { e.preventDefault(); handleAnswer(userInput); }}>
               <input
+                ref={inputRef}
                 autoFocus
                 type="text"
                 lang="ko"

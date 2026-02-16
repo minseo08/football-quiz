@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '../../store/useGameStore';
 import { api } from '../../lib/api';
@@ -9,9 +9,11 @@ export default function SoloPlayPage() {
   const router = useRouter();
   const { filteredQuizzes, currentStep, score, timeLeft, timeLimit, setQuizState, setCurrentUser } = useGameStore();
   const [userInput, setUserInput] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const [isChecking, setIsChecking] = useState(false);
   const [lastAnswerCorrect, setLastAnswerCorrect] = useState(false);
+  
   useEffect(() => {
     if (timeLeft > 0 && !isChecking) {
       const timer = setInterval(() => {
@@ -23,6 +25,17 @@ export default function SoloPlayPage() {
     }
   }, [timeLeft, isChecking, setQuizState]);
 
+  useEffect(() => {
+    const quiz = filteredQuizzes[currentStep];
+    if (quiz && !isChecking) {
+      const isSubjective = quiz.type !== 'logo' && quiz.type !== 'stadium' && quiz.type !== 'nationality';
+      if (isSubjective && inputRef.current) {
+        setTimeout(() => {
+          inputRef.current?.focus();
+        }, 100);
+      }
+    }
+  }, [currentStep, isChecking, filteredQuizzes]);
 
   const syncStats = async (isCorrect: boolean) => {
     try {
@@ -67,17 +80,6 @@ export default function SoloPlayPage() {
         timeLeft: timeLimit 
       });
     } else {
-      // try {
-      //   const response = await api.post('/api/users/update-stats', {
-      //   solved: filteredQuizzes.length,
-      //   correct: score
-      //   });
-      //   if (response.data.success) {
-      //     setCurrentUser(response.data.user); 
-      //   }
-      // } catch (err) {
-      //     console.error("통계 업데이트 실패");
-      // }
       setQuizState({ soloResults: { score: score, total: filteredQuizzes.length } });
       router.push('/solo-result');
     }
@@ -104,7 +106,6 @@ export default function SoloPlayPage() {
           </button>
         </div>
         <div className={`text-xl ${timeLeft <= 3 ? 'text-red-500 animate-pulse' : 'text-white'}`}>남은 시간 : {timeLeft}초</div>
-
       </div>
 
       <div className="w-full max-w-2xl aspect-video bg-white rounded-[2.5rem] border-4 border-gray-800 overflow-hidden mb-10 shadow-2xl">
@@ -144,10 +145,13 @@ export default function SoloPlayPage() {
           ) : (
             <div className="space-y-4">
               <input 
-                autoFocus
+                ref={inputRef}
+                autoFocus 
                 lang="ko"
                 className="w-full p-6 bg-white text-black text-center text-2xl font-black rounded-2xl outline-none focus:ring-4 focus:ring-green-500"
-                placeholder="정답을 입력하세요" value={userInput} onChange={(e) => setUserInput(e.target.value)}
+                placeholder="정답을 입력하세요" 
+                value={userInput} 
+                onChange={(e) => setUserInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleAnswer(userInput)}
               />
             </div>
