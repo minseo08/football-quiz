@@ -45,7 +45,7 @@ export default function SoloSelectPage() {
         <h2 className="text-4xl font-black text-green-500 mb-2 italic">SOLO MODE</h2>
         <p className="text-gray-500 mb-12 font-bold">도전할 퀴즈 유형을 선택하세요</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
           <button 
             onClick={() => handleSelectCategory('logo')}
             className="bg-gray-900 p-10 rounded-[2rem] border border-gray-800 hover:border-blue-500 transition-all group shadow-xl flex flex-col items-center text-center"
@@ -53,7 +53,7 @@ export default function SoloSelectPage() {
             <div className="mode-icon mb-6">
               <img src="/logo.png" alt="아이콘" width="70" />
             </div>
-            <h3 className="text-2xl font-black mb-2">팀 로고 맞히기</h3>
+            <h3 className="text-2xl font-black mb-2">로고로 클럽 맞히기</h3>
             <p className="text-gray-500 text-sm">객관식</p>
           </button>
 
@@ -64,7 +64,7 @@ export default function SoloSelectPage() {
             <div className="mode-icon mb-6">
               <img src="/player.png" alt="아이콘" width="70" />
             </div>
-            <h3 className="text-2xl font-black mb-2">선수 맞히기</h3>
+            <h3 className="text-2xl font-black mb-2">선수 이름 맞히기</h3>
             <p className="text-gray-500 text-sm">주관식</p>
           </button>
 
@@ -84,7 +84,7 @@ export default function SoloSelectPage() {
             className="bg-gray-900 p-10 rounded-[2rem] border border-gray-800 hover:border-blue-500 transition-all group shadow-xl flex flex-col items-center text-center"
           >
             <div className="mode-icon mb-6">
-              <img src="/logo.png" alt="아이콘" width="70" />
+              <img src="/nationality.png" alt="아이콘" width="70" />
             </div>
             <h3 className="text-2xl font-black mb-2">선수 국적 맞히기</h3>
             <p className="text-gray-500 text-sm">객관식</p>
@@ -95,7 +95,7 @@ export default function SoloSelectPage() {
             className="bg-gray-900 p-10 rounded-[2rem] border border-gray-800 hover:border-blue-500 transition-all group shadow-xl flex flex-col items-center text-center"
           >
             <div className="mode-icon mb-6">
-              <img src="/player.png" alt="아이콘" width="70" />
+              <img src="/career.png" alt="아이콘" width="70" />
             </div>
             <h3 className="text-2xl font-black mb-2">커리어로 선수 맞히기</h3>
             <p className="text-gray-500 text-sm">주관식</p>
@@ -106,9 +106,9 @@ export default function SoloSelectPage() {
             className="bg-gray-900 p-10 rounded-[2rem] border border-gray-800 hover:border-blue-500 transition-all group shadow-xl flex flex-col items-center text-center"
           >
             <div className="mode-icon mb-6">
-              <img src="/player.png" alt="아이콘" width="70" />
+              <img src="/squad_nation.png" alt="아이콘" width="70" />
             </div>
-            <h3 className="text-2xl font-black mb-2">국적 스쿼드로 팀 맞히기</h3>
+            <h3 className="text-2xl font-black mb-2">국적으로 클럽 맞히기</h3>
             <p className="text-gray-500 text-sm">주관식</p>
           </button>
         </div>
