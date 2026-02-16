@@ -38,7 +38,7 @@ export default function SoloSelectPage() {
   return (
     <main className="h-screen bg-gray-950 text-white pt-24 p-8 flex flex-col">
       <GlobalHeader />
-      <div className="max-w-4xl mx-auto w-full flex flex-col flex-1 overflow-hidden">
+      <div className="max-w-5xl mx-auto w-full flex flex-col flex-1 overflow-hidden">
         <div className="flex-none">
           <button onClick={() => router.push('/mode-select')} className="text-gray-400 mt-5 mb-6 hover:text-white transition-colors">
             ← 모드 선택으로
@@ -101,7 +101,7 @@ export default function SoloSelectPage() {
               <h3 className="text-2xl font-black mb-2">국적으로 클럽 맞히기</h3>
               <p className="text-gray-500 text-sm">주관식</p>
             </button>
-            
+
             <button 
               onClick={() => handleSelectCategory('coach')}
               className="bg-gray-900 p-10 rounded-[2rem] border border-gray-800 hover:border-green-500 transition-all group shadow-xl flex flex-col items-center text-center"
