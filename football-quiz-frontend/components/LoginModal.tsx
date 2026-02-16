@@ -69,11 +69,11 @@ export function LoginModal({ isOpen, onClose, onSwitchToRegister }: LoginModalPr
             onClose();
             window.location.href = '/mode-select';
           }}
-          className="mt-4 w-full text-gray-400 text-sm font-bold hover:text-white transition py-2 bg-gray-800/50 rounded-xl"
+          className="mt-6 w-full text-gray-400 text-sm font-bold hover:text-white transition py-2 bg-gray-800/50 rounded-xl"
         >
           비회원으로 이용
         </button>
-        <button onClick={onClose} className="mt-6 w-full text-gray-600 text-xs font-bold hover:text-red-500 transition">CLOSE</button>
+        <button onClick={onClose} className="mt-6 w-full text-gray-600 text-xs font-bold hover:text-red-500 hover:border-green-500 transition">CLOSE</button>
       </div>
     </div>
   );
