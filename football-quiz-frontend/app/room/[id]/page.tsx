@@ -151,12 +151,13 @@ export default function RoomPage() {
                   className="w-full bg-black p-4 rounded-2xl border border-gray-800 text-base font-bold focus:border-green-500 outline-none disabled:opacity-50 transition text-center"
                 >
                   <option value="" disabled>카테고리 선택</option>
-                  <option value="logo">팀 로고 맞히기</option>
-                  <option value="player">선수 맞히기</option>
+                  <option value="logo">로고로 클럽 맞히기</option>
+                  <option value="player">선수 이름 맞히기</option>
                   <option value="stadium">경기장 맞히기</option>
                   <option value="nationality">선수 국적 맞히기</option>
                   <option value="career">커리어로 선수 맞히기</option>
-                  <option value="squad_nation">국적 스쿼드로 팀 맞히기</option>
+                  <option value="squad_nation">국적으로 클럽 맞히기</option>
+                  <option value="coach">감독 이름 맞히기</option>
                 </select>
               </div>
               <div>

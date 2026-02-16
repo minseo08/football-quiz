@@ -1,7 +1,7 @@
 import { IsString, IsArray, IsEnum, IsOptional, ArrayMinSize } from 'class-validator';
 
 export class CreateQuizDto {
-  @IsEnum(['logo', 'player', 'stadium', 'nationality', 'career', 'squad_nation'], { message: '유효한 퀴즈 타입이 아닙니다.' })
+  @IsEnum(['logo', 'player', 'stadium', 'nationality', 'career', 'squad_nation', 'coach'], { message: '유효한 퀴즈 타입이 아닙니다.' })
   type: string;
 
   @IsString()

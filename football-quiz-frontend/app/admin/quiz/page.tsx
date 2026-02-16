@@ -10,8 +10,9 @@ const DEFAULT_QUESTIONS: Record<string, string> = {
   player: '이 선수의 이름은 무엇일까요?',
   stadium: '이 경기장의 이름은 무엇일까요?',
   nationality: '이 선수의 국적은 무엇일까요?',
-  career: '이와 같은 커리어를 가진 선수의 이름은 무엇일까요?',
-  squad_nation: '이와 같은 스쿼드에 해당하는 팀의 이름은 무엇일까요?'
+  career: '해당 커리어를 가진 선수의 이름은 무엇일까요?',
+  squad_nation: '해당 스쿼드에 해당하는 팀의 이름은 무엇일까요?',
+  coach: '이 감독의 이름은 무엇일까요?'
 };
 
 export default function AdminQuizPage() {
@@ -75,12 +76,13 @@ export default function AdminQuizPage() {
               value={formData.type}
               onChange={(e) => setFormData({...formData, type: e.target.value})}
             >
-              <option value="logo">팀 로고 맞히기</option>
-              <option value="player">선수 맞히기</option>
+              <option value="logo">로고로 클럽 맞히기</option>
+              <option value="player">선수 이름 맞히기</option>
               <option value="stadium">경기장 맞히기</option>
               <option value="nationality">선수 국적 맞히기</option>
               <option value="career">커리어로 선수 맞히기</option>
-              <option value="squad_nation">국적 스쿼드로 팀 맞히기</option>
+              <option value="squad_nation">국적으로 클럽 맞히기</option>
+              <option value="coach">감독 이름 맞히기</option>
             </select>
           </div>
 

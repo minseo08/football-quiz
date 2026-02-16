@@ -111,6 +111,17 @@ export default function SoloSelectPage() {
             <h3 className="text-2xl font-black mb-2">국적으로 클럽 맞히기</h3>
             <p className="text-gray-500 text-sm">주관식</p>
           </button>
+
+          <button 
+            onClick={() => handleSelectCategory('coach')}
+            className="bg-gray-900 p-10 rounded-[2rem] border border-gray-800 hover:border-blue-500 transition-all group shadow-xl flex flex-col items-center text-center"
+          >
+            <div className="mode-icon mb-6">
+              <img src="/coach.png" alt="아이콘" width="60" />
+            </div>
+            <h3 className="text-2xl font-black mb-2">감독 이름 맞히기</h3>
+            <p className="text-gray-500 text-sm">주관식</p>
+          </button>
         </div>
       </div>
     </main>
