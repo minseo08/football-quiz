@@ -135,6 +135,7 @@ export default function GamePage() {
               <input
                 autoFocus
                 type="text"
+                lang="ko"
                 placeholder="정답을 입력하세요!"
                 className="w-full p-6 bg-white text-black text-center text-2xl font-black rounded-2xl shadow-xl focus:ring-4 focus:ring-green-500 outline-none"
                 value={userInput}

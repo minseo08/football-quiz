@@ -41,7 +41,7 @@ export default function ModeSelectPage() {
         >
           {isGuest && (
             <div className="absolute top-6 right-6 bg-red-500 text-white text-[10px] font-black px-2 py-1 rounded-md uppercase tracking-wider">
-              Login Required
+              로그인 시 이용 가능
             </div>
           )}
           <div className="mode-icon mb-6">

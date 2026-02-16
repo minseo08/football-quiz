@@ -144,7 +144,9 @@ export default function SoloPlayPage() {
           ) : (
             <div className="space-y-4">
               <input 
-                autoFocus className="w-full p-6 bg-white text-black text-center text-2xl font-black rounded-2xl outline-none focus:ring-4 focus:ring-green-500"
+                autoFocus
+                lang="ko"
+                className="w-full p-6 bg-white text-black text-center text-2xl font-black rounded-2xl outline-none focus:ring-4 focus:ring-green-500"
                 placeholder="정답을 입력하세요" value={userInput} onChange={(e) => setUserInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleAnswer(userInput)}
               />
